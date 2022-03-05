@@ -3,16 +3,13 @@ from tkinter.font import BOLD
 from turtle import width
 import requests
 import tkinter as tk
+from tkinter import messagebox
 
 root = tk.Tk()
-
-
 
 root.title("AQI Tracker")
 root.geometry("700x700")
 root.configure(bg='light blue') 
-
-
 
 def get_aqi(city):
     try:
@@ -25,8 +22,9 @@ def get_aqi(city):
         aqi = data['aqi']  # Air quality Index    
         air_label['text'] = aqi
     except:
-        hellow =tk.Label(root,text="Data not available sorry",fg ="black" ,font=('times new roman',18,BOLD),width=500)
-        hellow.place(x = 300 , y= 500 , width=150 , height=50)
+        messagebox.showerror("AQI", "Data not available sorry")
+        #hellow =tk.Label(root,text="Data not available sorry",fg ="black" ,font=('times new roman',18,BOLD),width=500)
+        #hellow.place(x = 300 , y= 500 , width=150 , height=50)
 
     if (aqi < 50):
         condition =tk.Label(root,text="Good",bg = "green" ,font=('times new roman',18,BOLD),width=40)
