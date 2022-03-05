@@ -3,7 +3,7 @@ import requests
 from PIL import Image, ImageTk
 
 app = tk.Tk()
-app.state("zoomed")
+
 
 HEIGHT = 500
 WIDTH = 600
