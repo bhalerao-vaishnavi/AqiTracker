@@ -1,12 +1,21 @@
+from configparser import ConfigParser
+from turtle import width
 import tkinter as tk
 import requests
+from tkinter import *
 from PIL import Image, ImageTk
 
 app = tk.Tk()
+app.geometry("700x700")
+
+img = PhotoImage(file="landscape.png")
+label = Label(
+    app,
+    image=img
+)
+label.place(x=0, y=0)
 
 
-HEIGHT = 500
-WIDTH = 600
 
 def format_response(weather_json):
     try:
@@ -43,15 +52,16 @@ def open_image(icon):
 
 
 frame = tk.Frame(app,  bg='#42c2f4', bd=5)
+
 frame.place(relx=0.5, rely=0.1, relwidth=0.75, relheight=0.1, anchor='n')
 #frame_window = C.create_window(100, 40, window=frame)
 
-textbox = tk.Entry(frame, font=40)
+textbox = tk.Entry(frame,font=('times new roman',20))
 textbox.place(relwidth=0.65, relheight=1)
 
 submit = tk.Button(frame, text='Get Weather', font=40, command=lambda: get_weather(textbox.get()))
 #submit.config(font=)
-submit.place(relx=0.7, relheight=1, relwidth=0.3)
+submit.place(relx=0.68, relheight=1, relwidth=0.3)
 
 lower_frame = tk.Frame(app, bg='#42c2f4', bd=10)
 lower_frame.place(relx=0.5, rely=0.25, relwidth=0.75, relheight=0.6, anchor='n')
