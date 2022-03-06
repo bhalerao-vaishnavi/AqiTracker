@@ -59,7 +59,7 @@ frame.place(relx=0.5, rely=0.1, relwidth=0.75, relheight=0.1, anchor='n')
 textbox = tk.Entry(frame,font=('times new roman',20))
 textbox.place(relwidth=0.65, relheight=1)
 
-submit = tk.Button(frame, text='Get Weather', font=40, command=lambda: get_weather(textbox.get()))
+submit = tk.Button(frame, text='Get Weather', font=('times new roman',20), command=lambda: get_weather(textbox.get()))
 #submit.config(font=)
 submit.place(relx=0.68, relheight=1, relwidth=0.3)
 
