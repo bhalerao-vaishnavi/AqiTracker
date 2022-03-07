@@ -49,6 +49,10 @@ def open_image(icon):
     weather_icon.create_image(0,0, anchor='nw', image=img)
     weather_icon.image = img
 
+def previouspage():
+    app.destroy()
+    import Main
+
 
 
 frame = tk.Frame(app,  bg='#42c2f4', bd=5)
@@ -62,6 +66,11 @@ textbox.place(relwidth=0.65, relheight=1)
 submit = tk.Button(frame, text='Get Weather', font=40, command=lambda: get_weather(textbox.get()))
 #submit.config(font=)
 submit.place(relx=0.68, relheight=1, relwidth=0.3)
+
+backbutton= tk.Button(app, text='Back', font=40, command=previouspage)
+#submit.config(font=)
+backbutton.place(x = 450 , y= 600 , width=160 , height=60)
+
 
 lower_frame = tk.Frame(app, bg='#42c2f4', bd=10)
 lower_frame.place(relx=0.5, rely=0.25, relwidth=0.75, relheight=0.6, anchor='n')

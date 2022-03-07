@@ -11,6 +11,12 @@ root.title("AQI Tracker")
 root.geometry("700x700")
 root.configure(bg='light blue') 
 
+
+def previouspage1():
+    root.destroy()
+    import Main
+
+
 def get_aqi(city):
     try:
         city = textbox1.get()
@@ -56,6 +62,10 @@ def get_aqi(city):
 
 textbox1 = tk.Entry(root,font=('times new roman',20),width=40)
 textbox1.place(x = 200 , y=90 , width=300 , height=60)
+
+backbutton1= tk.Button(root, text='Back', font=40, command=previouspage1)
+#submit.config(font=)
+backbutton1.place(x = 400 , y= 200, width=160 , height=60)
 
 button1 = tk.Button(root,text='AQI',fg='blue',font=('times new roman',18),width=8,command=lambda: get_aqi(textbox1.get()))
 button1.place(x = 150 , y= 200 , width=200 , height=60)
